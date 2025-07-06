@@ -7,6 +7,18 @@ import Layout from '../layouts/Layout.astro';
     <div class="content">
       <h1>PopOff</h1>
       <p>Step into the Spotlight</p>
+
+      <!-- 🔽 Email Signup Form Starts Here -->
+      <form action="https://buttondown.email/popoff" method="post" target="popupwindow" onsubmit="window.open('https://buttondown.email/popoff', 'popupwindow')" class="email-form">
+        <input
+          type="email"
+          name="email"
+          required
+          placeholder="Enter your email"
+        />
+        <button type="submit">Subscribe</button>
+      </form>
+      <!-- 🔼 Email Signup Form Ends Here -->
     </div>
   </section>
 
@@ -41,6 +53,37 @@ import Layout from '../layouts/Layout.astro';
       margin-top: 1rem;
       text-transform: uppercase;
       letter-spacing: 0.1em;
+    }
+
+    .email-form {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .email-form input {
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      width: 100%;
+      max-width: 300px;
+    }
+
+    .email-form button {
+      padding: 0.75rem 1.5rem;
+      background-color: black;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .email-form button:hover {
+      background-color: #333;
     }
 
     @media (max-width: 600px) {
