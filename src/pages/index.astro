@@ -21,79 +21,79 @@ import Layout from '../layouts/Layout.astro';
       <!-- 🔼 Email Signup Form Ends Here -->
     </div>
   </section>
+</Layout>
 
-  <style>
-    :global(body) {
-      margin: 0;
-      background-color: #fff;
-      color: #000;
-      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-    }
+<style>
+  :global(body) {
+    margin: 0;
+    background-color: #fff;
+    color: #000;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
 
-    .hero {
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 0 20px;
-    }
+  .hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+  }
 
+  .content h1 {
+    font-size: 4rem;
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: 0.02em;
+  }
+
+  .content p {
+    font-size: 1.25rem;
+    margin-top: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .email-form {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: center;
+  }
+
+  .email-form input {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .email-form button {
+    padding: 0.75rem 1.5rem;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  .email-form button:hover {
+    background-color: #333;
+  }
+
+  @media (max-width: 600px) {
     .content h1 {
-      font-size: 4rem;
-      font-weight: 600;
-      margin: 0;
-      letter-spacing: 0.02em;
+      font-size: 2.5rem;
     }
 
     .content p {
-      font-size: 1.25rem;
-      margin-top: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-    }
-
-    .email-form {
-      margin-top: 2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-      align-items: center;
-    }
-
-    .email-form input {
-      padding: 0.75rem 1rem;
       font-size: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      width: 100%;
-      max-width: 300px;
     }
-
-    .email-form button {
-      padding: 0.75rem 1.5rem;
-      background-color: black;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-
-    .email-form button:hover {
-      background-color: #333;
-    }
-
-    @media (max-width: 600px) {
-      .content h1 {
-        font-size: 2.5rem;
-      }
-
-      .content p {
-        font-size: 1rem;
-      }
-    }
-  </style>
-</Layout>
+  }
+</style>
