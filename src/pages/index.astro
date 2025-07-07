@@ -14,9 +14,9 @@ const submitted = url.searchParams.get('submitted') === 'true';
       {submitted ? (
         <p class="thank-you">Thanks for subscribing! 🎉</p>
       ) : (
-        <form action="https://buttondown.email/YOUR_PUBLIC_USERNAME" method="post" class="email-form">
+        <form action="https://buttondown.email/popoff" method="post" class="email-form">
           <input type="email" name="email" required placeholder="Enter your email" />
-          <input type="hidden" name="redirect" value="https://yourdomain.com/?submitted=true" />
+          <input type="hidden" name="redirect" value="https://popoffapp.io/?submitted=true" />
           <button type="submit">Subscribe</button>
         </form>
       )}
