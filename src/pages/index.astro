@@ -24,6 +24,62 @@ const submitted = url.searchParams.get('submitted') === 'true';
   </section>
 
   <style>
+    /* Import Poppins from Google Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+    /* Apply Poppins to the entire section */
+    .hero {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .hero h1 {
+      font-weight: 700; /* Bold for the title */
+    }
+
+    .hero p {
+      font-weight: 400; /* Regular for normal text */
+    }
+
+    .thank-you {
+      font-size: 1.25rem;
+      margin-top: 2rem;
+      color: green;
+      font-weight: 600; /* Semi-bold for thank-you text */
+    }
+
+    .email-form input,
+    .email-form button {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 400;
+    }
+  </style>
+</Layout>
+---
+import { Astro } from 'astro';
+
+const url = Astro.request.url; // gets the full URL string
+const submitted = url.searchParams.get('submitted') === 'true';
+---
+
+<Layout>
+  <section class="hero">
+    <div class="content">
+      <h1>PopOff</h1>
+      <p>Step into the Spotlight</p>
+
+      {submitted ? (
+        <p class="thank-you">Thanks for subscribing! 🎉</p>
+      ) : (
+        <form action="https://buttondown.email/popoff" method="post" class="email-form">
+          <input type="email" name="email" required placeholder="Enter your email" />
+          <input type="hidden" name="redirect" value="https://popoffapp.io/?submitted=true" />
+          <button type="submit">Subscribe</button>
+        </form>
+      )}
+    </div>
+  </section>
+
+  <style>
     /* your existing styles here */
     .thank-you {
       font-size: 1.25rem;
