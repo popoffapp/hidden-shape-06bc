@@ -1,0 +1,8 @@
+name = "popoff"
+type = "javascript"
+account_id = "cd49eea44250cc21c274c2ccb88f0b8a"
+workers_dev = true
+compatibility_date = "2025-08-13"
+
+[vars]
+SESSION = "123456789"
