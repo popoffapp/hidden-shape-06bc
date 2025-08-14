@@ -1,7 +1,7 @@
 ---
 import { Astro } from 'astro';
 
-const url = Astro.request.url; // gets the full URL string
+const url = Astro.request.url;
 const submitted = url.searchParams.get('submitted') === 'true';
 ---
 
@@ -9,7 +9,17 @@ const submitted = url.searchParams.get('submitted') === 'true';
   <section class="hero">
     <div class="content">
       <h1>PopOff</h1>
-      <p>Step into the Spotlight</p>
+      <p class="tagline">Step into the Spotlight</p>
+
+      <!-- New About Section -->
+      <div class="about">
+        <h2>What is PopOff?</h2>
+        <p>
+          PopOff is the social platform where creators, influencers, and rising stars can
+          showcase their talent and be discovered. Whether you’re an artist, entrepreneur,
+          or content creator, PopOff gives you the exposure you deserve.
+        </p>
+      </div>
 
       {submitted ? (
         <p class="thank-you">Thanks for subscribing! 🎉</p>
@@ -24,67 +34,24 @@ const submitted = url.searchParams.get('submitted') === 'true';
   </section>
 
   <style>
-    /* Import Poppins from Google Fonts */
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-
-    /* Apply Poppins to the entire section */
-    .hero {
-      font-family: 'Poppins', sans-serif;
+    .content {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2rem;
     }
-
-    .hero h1 {
-      font-weight: 700; /* Bold for the title */
-    }
-
-    .hero p {
-      font-weight: 400; /* Regular for normal text */
-    }
-
-    .thank-you {
+    .tagline {
       font-size: 1.25rem;
-      margin-top: 2rem;
-      color: green;
-      font-weight: 600; /* Semi-bold for thank-you text */
+      margin-bottom: 2rem;
+      font-weight: 500;
     }
-
-    .email-form input,
-    .email-form button {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 400;
+    .about {
+      margin: 2rem 0;
+      padding: 1.5rem;
+      background-color: #f8f8f8;
+      border-radius: 12px;
     }
-  </style>
-</Layout>
----
-import { Astro } from 'astro';
-
-const url = Astro.request.url; // gets the full URL string
-const submitted = url.searchParams.get('submitted') === 'true';
----
-
-<Layout>
-  <section class="hero">
-    <div class="content">
-      <h1>PopOff</h1>
-      <p>Step into the Spotlight</p>
-
-      {submitted ? (
-        <p class="thank-you">Thanks for subscribing! 🎉</p>
-      ) : (
-        <form action="https://buttondown.email/popoff" method="post" class="email-form">
-          <input type="email" name="email" required placeholder="Enter your email" />
-          <input type="hidden" name="redirect" value="https://popoffapp.io/?submitted=true" />
-          <button type="submit">Subscribe</button>
-        </form>
-      )}
-    </div>
-  </section>
-
-  <style>
-    /* your existing styles here */
-    .thank-you {
-      font-size: 1.25rem;
-      margin-top: 2rem;
-      color: green;
-    }
-  </style>
-</Layout>
+    .about h2 {
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+      font-size: 1.75rem;
