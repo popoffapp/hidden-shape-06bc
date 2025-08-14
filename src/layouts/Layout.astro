@@ -12,14 +12,21 @@ const { title = "PopOff", description = "Step into the Spotlight" } = Astro.prop
     <!-- Import Poppins from Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <style>
-      /* Apply Poppins to the whole site */
-      body {
-        font-family: 'Poppins', sans-serif;
-        margin: 0;
-        padding: 0;
-      }
-    </style>
+<style>
+  /* Apply Poppins font sitewide */
+  body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600; /* Bold for everything by default */
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Headlines even bolder */
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 800; /* Extra bold for headlines */
+  }
+</style>
+
   </head>
   <body>
     <slot />
