@@ -2,16 +2,12 @@
 import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
-
-import cloudflare from "@astrojs/cloudflare";
+import vercel from "@astrojs/vercel/serverless"; // ✅ Use Vercel adapter
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://example.com",
+  site: "https://popoffapp.io", // update to your real domain
   integrations: [mdx(), sitemap()],
-  adapter: cloudflare({
-    platformProxy: {
-      enabled: true,
-    },
-  }),
+  output: "server", // ✅ required for serverless deployment
+  adapter: vercel(),
 });
