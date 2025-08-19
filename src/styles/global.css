@@ -1,18 +1,59 @@
-/* Apply Poppins everywhere */
-* {
-  font-family: 'Poppins', sans-serif !important;
+/* Reset / Normalize */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
-/* Normal body text */
-body {
+/* Set Poppins as the default font everywhere */
+html, body {
+  height: 100%;
+  font-family: 'Poppins', Arial, sans-serif !important;
   font-weight: 400;
-  line-height: 1.6;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fff;
+  color: #000;
 }
 
-/* Headlines bolder */
+/* Headings — extra bold */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 0.5em;
 }
+
+/* Paragraphs */
+p {
+  margin-bottom: 1em;
+  font-weight: 400;
+}
+
+/* Links */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Lists */
+ul, ol {
+  list-style: none;
+}
+
+/* Buttons / Inputs reset */
+button, input, textarea, select {
+  font: inherit;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+/* Images responsive */
+img, picture, video, canvas, svg {
