@@ -13,7 +13,6 @@ const submitted = Astro.url.searchParams.get('submitted') === 'true';
 
       <!-- About Section -->
       <div class="about">
-     
         <p>
           PopOff is a new social platform where anyone can
           achieve virality overnight. Whether you’re an artist, entrepreneur,
@@ -41,6 +40,14 @@ const submitted = Astro.url.searchParams.get('submitted') === 'true';
   </section>
 
   <style>
+    /* Full height hero section centered vertically + horizontally */
+    .hero {
+      display: flex;
+      align-items: center;       /* vertical center */
+      justify-content: center;   /* horizontal center */
+      min-height: 100vh;         /* take up full viewport height */
+    }
+
     .content {
       text-align: center;
       max-width: 720px;
@@ -66,12 +73,6 @@ const submitted = Astro.url.searchParams.get('submitted') === 'true';
 
     .about {
       margin: 2rem 0;
-    }
-
-    .about h2 {
-      font-weight: 800;
-      margin-bottom: 0.75rem;
-      font-size: 1.75rem;
     }
 
     .about p {
