@@ -1,8 +1,7 @@
 ---
 import { Astro } from 'astro';
-import Layout from '../layouts/Layout.astro'; // ✅ correct path
+import Layout from '../layouts/Layout.astro';
 
-// Use Astro.url (URL object) so this works at build-time
 const submitted = Astro.url.searchParams.get('submitted') === 'true';
 ---
 
@@ -12,16 +11,13 @@ const submitted = Astro.url.searchParams.get('submitted') === 'true';
       <h1>PopOff</h1>
       <p class="tagline">Step into the Spotlight</p>
 
-      <!-- ABOUT_MARKER_v2 -->
-      <div
-        class="about"
-        style="border:2px solid #ff007a;background:#fff6fb;padding:16px;margin:24px 0;border-radius:12px;"
-      >
-        <h2>What is PopOff?</h2>
+      <!-- About Section -->
+      <div class="about">
+     
         <p>
-          PopOff is the social platform where creators, influencers, and rising stars can
-          showcase their talent and be discovered. Whether you’re an artist, entrepreneur,
-          or content creator, PopOff gives you the exposure you deserve.
+          PopOff is a new social platform where anyone can
+          achieve virality overnight. Whether you’re an artist, entrepreneur,
+          or creator, PopOff gives you the exposure you deserve. Sign up now for updates.
         </p>
       </div>
 
@@ -52,88 +48,76 @@ const submitted = Astro.url.searchParams.get('submitted') === 'true';
       padding: 2rem;
       font-family: 'Poppins', sans-serif;
     }
-    h1 { font-size: 3rem; font-weight: 700; margin-bottom: 0.5rem; }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
     .tagline {
-      font-size: 1.25rem; margin-bottom: 2rem; font-weight: 500; color: #333;
-      text-transform: uppercase; letter-spacing: 1px;
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      font-weight: 500;
+      color: #333;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
+
     .about {
-      margin: 2rem 0; padding: 1.5rem; background-color: #f8f8f8; border-radius: 12px;
+      margin: 2rem 0;
     }
-    .about h2 { font-weight: 800; margin-bottom: 0.75rem; font-size: 1.75rem; }
-    .about p { font-size: 1rem; line-height: 1.6; color: #555; }
-    .email-form { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+
+    .about h2 {
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+      font-size: 1.75rem;
+    }
+
+    .about p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    .email-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
     .email-form input[type="email"] {
-      padding: 0.75rem 1rem; width: 100%; max-width: 320px; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; background: #fff; color: #000;
+      padding: 0.75rem 1rem;
+      width: 100%;
+      max-width: 320px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+      background: #fff;
+      color: #000;
     }
+
     .email-form button {
-      padding: 0.75rem 1.5rem; background-color: black; color: white; border: none; border-radius: 8px; font-size: 1rem; cursor: pointer; transition: background-color 0.2s ease;
+      padding: 0.75rem 1.5rem;
+      background-color: black;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
     }
-    .email-form button:hover { background-color: #333; }
-    .thank-you { margin-top: 1.5rem; font-size: 1.1rem; font-weight: 600; color: green; }
+
+    .email-form button:hover {
+      background-color: #333;
+    }
+
+    .thank-you {
+      margin-top: 1.5rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: green;
+    }
   </style>
 </Layout>
----
-import { Astro } from 'astro';
-
-// Use Astro.url (URL object) instead of Astro.request.url (string)
-const submitted = Astro.url.searchParams.get('submitted') === 'true';
----
-
-<Layout>
-  <section class="hero">
-    <div class="content">
-      <h1>PopOff</h1>
-      <p class="tagline">Step into the Spotlight</p>
-
-      <!-- ABOUT_MARKER_v2 -->
-      <div
-        class="about"
-        style="border:2px solid #ff007a;background:#fff6fb;padding:16px;margin:24px 0;border-radius:12px;"
-      >
-        <h2>What is PopOff?</h2>
-        <p>
-          PopOff is the social platform where creators, influencers, and rising stars can
-          showcase their talent and be discovered. Whether you’re an artist, entrepreneur,
-          or content creator, PopOff gives you the exposure you deserve.
-        </p>
-      </div>
-
-      {submitted ? (
-        <p class="thank-you">Thanks for subscribing! 🎉</p>
-      ) : (
-        <form action="https://buttondown.email/popoff" method="post" class="email-form">
-          <input
-            type="email"
-            name="email"
-            required
-            placeholder="Enter your email"
-            autocomplete="email"
-            aria-label="Email address"
-          />
-          <input type="hidden" name="redirect" value="https://popoffapp.io/?submitted=true" />
-          <button type="submit">Subscribe</button>
-        </form>
-      )}
-    </div>
-  </section>
-
-  <style>
-    .content {
-      text-align: center;
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 2rem;
-      font-family: 'Poppins', sans-serif;
-    }
-    h1 { font-size: 3rem; font-weight: 700; margin-bottom: 0.5rem; }
-    .tagline {
-      font-size: 1.25rem; margin-bottom: 2rem; font-weight: 500; color: #333;
-      text-transform: uppercase; letter-spacing: 1px;
-    }
-    .about {
-      margin: 2rem 0; padding: 1.5rem; background-color: #f8f8f8; border-radius: 12px;
-    }
-    .about h2 { font-weight: 800; margin-bottom: 0.75rem; font-size: 1.75rem; }
-    .about p { font-size: 1rem; line-height: 1.6; color: #555; }
-    .email-form { display: flex; fle
