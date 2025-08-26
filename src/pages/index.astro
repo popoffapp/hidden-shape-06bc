@@ -1,8 +1,8 @@
 ---
 import { Astro } from 'astro';
 
-const url = Astro.request.url;
-const submitted = url.searchParams.get('submitted') === 'true';
+// Use Astro.url (URL object) instead of Astro.request.url (string)
+const submitted = Astro.url.searchParams.get('submitted') === 'true';
 ---
 
 <Layout>
@@ -51,80 +51,14 @@ const submitted = url.searchParams.get('submitted') === 'true';
       padding: 2rem;
       font-family: 'Poppins', sans-serif;
     }
-
-    h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-
+    h1 { font-size: 3rem; font-weight: 700; margin-bottom: 0.5rem; }
     .tagline {
-      font-size: 1.25rem;
-      margin-bottom: 2rem;
-      font-weight: 500;
-      color: #333;
-      text-transform: uppercase;
-      letter-spacing: 1px;
+      font-size: 1.25rem; margin-bottom: 2rem; font-weight: 500; color: #333;
+      text-transform: uppercase; letter-spacing: 1px;
     }
-
-    /* fallback styles (you can remove the inline pink border later) */
     .about {
-      margin: 2rem 0;
-      padding: 1.5rem;
-      background-color: #f8f8f8;
-      border-radius: 12px;
+      margin: 2rem 0; padding: 1.5rem; background-color: #f8f8f8; border-radius: 12px;
     }
-
-    .about h2 {
-      font-weight: 800;
-      margin-bottom: 0.75rem;
-      font-size: 1.75rem;
-    }
-
-    .about p {
-      font-size: 1rem;
-      line-height: 1.6;
-      color: #555;
-    }
-
-    .email-form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .email-form input[type="email"] {
-      padding: 0.75rem 1rem;
-      width: 100%;
-      max-width: 320px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 1rem;
-      background: #fff;
-      color: #000;
-    }
-
-    .email-form button {
-      padding: 0.75rem 1.5rem;
-      background-color: black;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background-color 0.2s ease;
-    }
-
-    .email-form button:hover {
-      background-color: #333;
-    }
-
-    .thank-you {
-      margin-top: 1.5rem;
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: green;
-    }
-  </style>
-</Layout>
+    .about h2 { font-weight: 800; margin-bottom: 0.75rem; font-size: 1.75rem; }
+    .about p { font-size: 1rem; line-height: 1.6; color: #555; }
+    .email-form { display: flex; fle
