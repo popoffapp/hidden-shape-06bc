@@ -11,8 +11,11 @@ const submitted = url.searchParams.get('submitted') === 'true';
       <h1>PopOff</h1>
       <p class="tagline">Step into the Spotlight</p>
 
-      <!-- About Section -->
-      <div class="about">
+      <!-- ABOUT_MARKER_v2 -->
+      <div
+        class="about"
+        style="border:2px solid #ff007a;background:#fff6fb;padding:16px;margin:24px 0;border-radius:12px;"
+      >
         <h2>What is PopOff?</h2>
         <p>
           PopOff is the social platform where creators, influencers, and rising stars can
@@ -64,6 +67,7 @@ const submitted = url.searchParams.get('submitted') === 'true';
       letter-spacing: 1px;
     }
 
+    /* fallback styles (you can remove the inline pink border later) */
     .about {
       margin: 2rem 0;
       padding: 1.5rem;
@@ -97,6 +101,8 @@ const submitted = url.searchParams.get('submitted') === 'true';
       border: 1px solid #ccc;
       border-radius: 8px;
       font-size: 1rem;
+      background: #fff;
+      color: #000;
     }
 
     .email-form button {
