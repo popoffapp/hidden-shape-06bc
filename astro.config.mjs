@@ -1,10 +1,11 @@
 import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
-import vercel from "@astrojs/vercel/static"; // ✅ Vercel static adapter
+import vercel from "@astrojs/vercel/static";
 
 export default defineConfig({
-  site: "https://popoffapp.io", // update if needed
+  site: "https://popoffapp.io",
   integrations: [mdx(), sitemap()],
   adapter: vercel(),
 });
+
